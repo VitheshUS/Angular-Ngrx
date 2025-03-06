@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LeftComponentComponent } from './components/left-component/left-component.component';
-import { RightComponentComponent } from './components/right-component/right-component.component';
+import { GroceryComponent } from './components/grocery/grocery.component';
+import { BucketComponent } from './components/bucket/bucket.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LeftComponentComponent, RightComponentComponent],
+  imports: [RouterOutlet, GroceryComponent, BucketComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
