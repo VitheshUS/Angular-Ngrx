@@ -1,3 +1,5 @@
 <section class="mainLeftContainer">
-    Left container
+    <div *ngFor="let item of bucket$ | async">
+        <button (click)="decrement(item)">{{item.name}} {{item.quantity}}</button>
+    </div>
 </section>

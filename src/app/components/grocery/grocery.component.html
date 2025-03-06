@@ -1,3 +1,5 @@
 <section class="mainRightContainer">
-    Right Container
+    <div *ngFor="let item of groceries$ | async">
+        <button (click)="increment(item)">{{item.name}}</button>
+    </div>
 </section>

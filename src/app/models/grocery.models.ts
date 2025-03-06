@@ -3,3 +3,10 @@ export interface Grocery {
     name: string;
     type: string;
 }
+
+export interface Bucket {
+    id: number;
+    name: string;
+    type: string;
+    quantity: number;
+}
