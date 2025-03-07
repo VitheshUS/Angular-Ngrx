@@ -24,7 +24,7 @@ export const bucketReducer = createReducer(
         if (bucket) {
             //if quantity is 1 then remove else just reduce it
             if (bucket.quantity <= 1)
-                return state.filter(item => item.id !== bucket.id);
+                return state.filter(item => item.id !== action.payLoad.id);
             else return state.map(item => {
                 if (item.id === bucket.id)
                     return { ...item, quantity: bucket.quantity - 1 };

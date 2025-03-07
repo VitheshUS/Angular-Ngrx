@@ -4,6 +4,7 @@ import { Grocery } from '../../models/grocery.models';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { addToBucket } from '../../store/actions/bucket.action';
+import { selectGroceryType } from '../../store/selectors/grocery.selectors';
 
 @Component({
   selector: 'app-grocery',
@@ -17,7 +18,7 @@ export class GroceryComponent {
   groceries$?: Observable<Grocery[]>;
 
   constructor(private store: Store<{ groceries: Grocery[] }>) {
-    this.groceries$ = store.select("groceries")
+    this.groceries$ = store.select(selectGroceryType)
   }
 
   increment(item: Grocery) {

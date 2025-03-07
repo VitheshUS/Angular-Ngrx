@@ -7,13 +7,12 @@ export const addToBucket = createAction(
 )
 
 export const removeFromBucket = createAction(
-    '[bucket] Remove',
+    '[bucket] Remove', // this is a key and this must be unique across all the actions
     props<{ payLoad: { id: number } }>()
 )
 
-// here Add in "[bucket] Add" is just for debugging and orgainzation and the code still works without it
 /**
- * when we are creating the action we use createAction keyword and we pass the reduer name and payload or parameters type.
+ * when we are creating the action we use createAction keyword and we pass the reducer name and payload or parameters type.
  * 
  * 
  * 
