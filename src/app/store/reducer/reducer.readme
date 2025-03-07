@@ -1,0 +1,37 @@
+The reducers are like a brain
+when a reducer is created we initialize a value
+The reducer also consist of actions to which its listening to.
+
+reducer is like a brain its responseible for creating and managing the state
+the reducer will take a slice of store int the global store and it will have its own actions.
+
+So bascially each state is managed my its own reducer and action and those state will be stored in the global store
+
+1> The initial step is to create a reducer and provide a initial state to it
+
+
+> So there can be one reducer and its store slice and multiple selectors and actions
+So basically action is like and event which contains label and the payLoad which is the parameter
+The defination of that action is in the reduder. 
+The reducer will keep listening to that action.
+So how to trigger this action
+In a componet we can dispatch the action and pass the parameter to it which is the payload. After dispatching and object is created with the required label and is then pushed into an observable stream
+All the reducers are listening to or subscribed to the stream. So whenever a new event comes then the reducers check if its been listening to that event . if yes then it will pick that payload from that even and 
+it will then execute the defination inside it and it will change the state.
+
+So an action is a function which when called returns an action object.
+Eg:
+export const addToBucket = createAction(
+    '[bucket] Add',
+    props<{ payLoad: Bucket }>()
+)
+the value returned is {
+  "type": "[bucket] Add",
+  "payLoad": {
+    "id": 1,
+    "quantity": 2
+  }
+}
+
+so this will be dispatched into the observable stream then whatever reducer is dependent on this event will react to it.
+So based on the type the matching happens. The reducers will the compare the type of all the functions its listening and will compare the type of the new event. and after that it will take the payload from that event and will then execture the state changing function
