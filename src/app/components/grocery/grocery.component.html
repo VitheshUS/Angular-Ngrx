@@ -1,5 +1,9 @@
 <section class="mainRightContainer">
-    <div *ngFor="let item of groceries$ | async">
+
+    <!-- @for(groc of (filteredGroceries$ | async) ??) -->
+    <div *ngFor="let item of (filteredGroceries$ | async) ?? (groceries$ | async)">
         <button (click)="increment(item)">{{item.name}}</button>
     </div>
+
+    <input type="text" (change)="onTypeChange($event)" />
 </section>

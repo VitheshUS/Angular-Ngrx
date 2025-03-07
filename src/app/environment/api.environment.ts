@@ -1,0 +1,1 @@
+export const groceryApi = "https://localhost:7001/api/Coupon/Grocery";

@@ -8,15 +8,18 @@ import { provideStoreDevtools } from '@ngrx/store-devtools'
 import { routes } from './app.routes';
 import { groceryReducer } from './store/reducer/grocery.reducer';
 import { bucketReducer } from './store/reducer/bucket.reducer';
+import { GroceryEffects } from './store/effects/grocery.effect';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
   provideRouter(routes),
+  provideHttpClient(),
   provideStore({
     groceries: groceryReducer,
     bucket: bucketReducer
   }),
-  provideEffects(),
+  provideEffects(GroceryEffects),
   provideStoreDevtools({})
   ]
 };
