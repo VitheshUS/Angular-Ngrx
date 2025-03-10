@@ -13,10 +13,9 @@ export const removeFromBucket = createAction(
 
 /**
  * when we are creating the action we use createAction keyword and we pass the reducer name and payload or parameters type.
+ * By creating this internally it will create a function which s going to create an action
+ * It will create a json instance that has the label and payload defination
+ * This will be returned to the called method
  * 
- * 
- * 
- * 
- * 
- * 
+ * props is written like a function because it will return props metadata which can be used to build the action instance
  */
